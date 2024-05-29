@@ -1,0 +1,18 @@
+{
+  "name": "@rexwhitten/deckape",
+  "version": "1.0.0",
+  "description": "CLI tool for managing local container development lifecycle workflows for locally developing containerized serverless functions.",
+  "main": "deckape.js",
+  "bin": {
+    "deckape": "./deckape.js",
+    "install": "chmod +x deckape.js && npm install -g ."
+  },
+  "scripts": {
+    "start": "node deckape.js"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^8.3.0"
+  }
+}
