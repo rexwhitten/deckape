@@ -1,7 +1,7 @@
 
 # DeckApe
 
-<img src="media/logo.png" alt="Logo" width="200" height="200">
+<img src="media/logo.png" alt="Logo" width="400" height="400">
 
 
 **DeckApe** is a CLI tool for managing the local container development lifecycle workflows for locally developing containerized serverless functions.
