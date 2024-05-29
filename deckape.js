@@ -48,7 +48,7 @@ const rebuildContainer = async (containerName, containerTag) => {
 
 const publishToECR = async (containerName, containerTag) => {
     const region = 'us-east-1';
-    const accountId = "896514097725";
+    const accountId = "123456789012";
     const repositoryName = containerName;
     const ecrUri = `${accountId}.dkr.ecr.${region}.amazonaws.com/${repositoryName}`;
 
@@ -57,7 +57,7 @@ const publishToECR = async (containerName, containerTag) => {
         await runCommand(`aws ecr get-login-password --region ${region} | docker login --username AWS --password-stdin ${accountId}.dkr.ecr.${region}.amazonaws.com`);
 
         console.log('Creating ECR repository if it does not exist...');
-        await runCommand(`aws ecr create-repository --repository-name ${repositoryName} --region ${region} --image-scanning-configuration scanOnPush=true --image-tag-mutability MUTABLE || true`);
+        await runCommand(`aws ecr create-repository --repository-name ${repositoryName} --region ${region} --image-scanning-configuration scanOnPush=true --image-tag-mutability IMMUTABLE || true`);
 
         console.log('Tagging Docker image...');
         await runCommand(`docker tag ${containerName}:${containerTag} ${ecrUri}:latest`);
